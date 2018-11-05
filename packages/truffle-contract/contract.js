@@ -404,8 +404,15 @@ var contract = (function (module) {
 
       var self = this;
       var methodArgs = {};
+      let callback;
 
       var lastArg = args[args.length - 1];
+
+      if (typeof lastArg === 'function') {
+        callback = args.pop()
+        lastArg = args[args.length - 1];
+      }
+
       if (!Array.isArray(lastArg) && typeof lastArg === 'object') {
         methodArgs = args.pop();
       }
@@ -417,6 +424,7 @@ var contract = (function (module) {
       if (Array.isArray(args[0])) {
         args = args[0]
       }
+
 
       var option = {};
 
@@ -434,7 +442,8 @@ var contract = (function (module) {
           methodName,
           args,
           abi: self.abi,
-          methodArgs
+          methodArgs,
+          callback
         }, self.defaults());
 
         tronWrap.triggerContract(option, _callback);

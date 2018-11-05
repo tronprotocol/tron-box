@@ -17,12 +17,11 @@ var command = {
 
     var config = Config.detect(options);
 
-    // if "development" exists, default to using that for testing
     if (!config.network) {
-      if (config.networks.development)
-        config.network = "development";
-      else if (config.networks.test)
+      if (config.networks.test)
         config.network = "test";
+      else if (config.networks.development)
+        config.network = "development";
     }
 
     if (!config.network) {
