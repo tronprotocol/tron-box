@@ -151,7 +151,7 @@ function init(options) {
     if (callSend === 'send' && option.methodArgs.from) {
       privateKey = this._privateKeyByAccount[option.methodArgs.from]
     }
-    // console.debug(option.methodName, option.args, option.methodArgs);
+
     myContract[option.methodName](...option.args)[callSend](option.methodArgs || {}, privateKey)
       .then(function (res) {
         callback(null, res)

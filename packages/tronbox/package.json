@@ -4,7 +4,6 @@
   "version": "2.1.7",
   "description": "TronBox - Simple development framework for tronweb",
   "dependencies": {
-    "mocha": "^4.1.0",
     "original-require": "1.0.1"
   },
   "devDependencies": {
@@ -16,7 +15,7 @@
     "js-scrypt": "^0.2.0",
     "meta-npm": "^0.0.22",
     "meta-pkgs": "^0.2.0",
-    "mocha": "5.2.0",
+    "mocha": "^4.1.0",
     "prepend-file": "^1.3.1",
     "semver": "^5.5.0",
     "shebang-loader": "0.0.1",
@@ -37,7 +36,7 @@
     "build": "npm run build-tronweb && npm run build-cli",
     "build-tronweb": "cd ../tronwrap/tron-web && yarn build -p",
     "build-cli": "webpack --config ./cli.webpack.config.js",
-    "test": "echo \"Error: tests will be fixed soon in a new release\" && exit 1",
+    "test": "mocha test",
     "publish:byoc": "node ./scripts/prereleaseVersion.js byoc-safe byoc",
     "publish:next": "node ./scripts/prereleaseVersion.js next next"
   },
