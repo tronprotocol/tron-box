@@ -143,7 +143,7 @@ function init(options, extraOptions) {
       feeLimit: this.networkConfig.feeLimit,
       callValue: this.networkConfig.callValue,
       userFeePercentage: this.networkConfig.userFeePercentage,
-      originalEnergyLimit: this.networkConfig.originalEnergyLimit,
+      originEnergyLimit: this.networkConfig.originEnergyLimit,
       abi: option.abi,
       parameters: option.parameters
     }, option.privateKey).then(result => {
