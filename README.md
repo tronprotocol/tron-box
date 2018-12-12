@@ -98,7 +98,7 @@ This command will invoke all migration scripts within the migrations directory. 
 
 ## Parameters by contract (introduced in v2.2.2)
 
-It is very important to set the deploying parameters for any contract. In TronBox 2.2.3+ you can do it modifying the file
+It is very important to set the deploying parameters for any contract. In TronBox 2.2.2+ you can do it modifying the file
 ```
 migrations/2_deploy_contracts.js
 ```
@@ -225,4 +225,17 @@ yarn bootstrap
 ```
 ./tronbox.dev migrate --reset
 ```
+
+## Recent history
+
+__2.2.3__
+Resolve appended process after migrating.
+Add better error messaging.
+Fix issue with invalid origin_energy_limit.
+
+__2.2.2__
+Add parameter configuration by smart contract.
+
+__2.2.1__
+Add compatibility with JavaTron 3.2.
 

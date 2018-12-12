@@ -14,6 +14,7 @@ var command = {
     var copy = require("../copy");
     var Environment = require("../environment");
     var TronWrap = require('tronwrap')
+    const logErrorAndExit = require('tronwrap').logErrorAndExit
 
     var config = Config.detect(options);
 
@@ -36,7 +37,7 @@ var command = {
         log: options.log
       })
     } catch(err) {
-      return console.error('ERROR:', err.message)
+      logErrorAndExit(console, err.message)
     }
 
     var ipcDisconnect;
